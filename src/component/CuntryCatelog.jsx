@@ -38,7 +38,6 @@ const CountryCatalog = () => {
       const filteredCountries = result.map((item) => item.item);
       setCountries(filteredCountries);
       setPage(1);
-      handleClearSearch();
     }
   };
 

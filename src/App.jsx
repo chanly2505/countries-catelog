@@ -7,7 +7,7 @@ function App() {
   return (
       <BrowserRouter>
           <Routes>
-              <Route path='/' element={<CountryCatalog/>}></Route>
+              <Route path='/countries-catelog' element={<CountryCatalog/>}></Route>
               <Route path='*' element={<Error/>}></Route>
           </Routes>
       </BrowserRouter>

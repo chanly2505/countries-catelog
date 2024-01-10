@@ -1,11 +1,16 @@
 import './index.css';
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 import CountryCatalog from './component/CuntryCatelog'
+import Error from './component/Error';
 function App() {
 
   return (
-      <>
-        <CountryCatalog/>
-      </>
+      <BrowserRouter>
+          <Routes>
+              <Route path='/' element={<CountryCatalog/>}></Route>
+              <Route path='*' element={<Error/>}></Route>
+          </Routes>
+      </BrowserRouter>
   )
 }
 

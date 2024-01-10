@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles'
-const Article = ({ flags, name, population, region, subregion, cca2, cca3, altSpellings, idd, nativeName }) => {
+const Article = ({ flags, name, cca2, cca3, altSpellings, idd }) => {
     const [open, setOpen] = useState(false)
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'))

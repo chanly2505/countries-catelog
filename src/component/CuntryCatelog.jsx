@@ -10,6 +10,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 
 const CountryCatalog = () => {
+  //state
   const [countries, setCountries] = useState([]);
   const [page, setPage] = useState(1);
   const [rowPerPage, setRowPerPage] = useState(25);

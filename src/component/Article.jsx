@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles'
-const Article = ({ flags, name, cca2, cca3, altSpellings, idd }) => {
+const Article = ({ flags, name, cca2, cca3, altSpellings, idd, nativeName }) => {
+    // State to manage the open/closed state of the dialog
     const [open, setOpen] = useState(false)
+    // Access the theme and check if the screen size is below 'md'
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'))
+
+    // Function to handle opening the dialog
     const handleOpen = () => {
         setOpen(true)
     }
+    // Function to handle closing the dialog
     const handleClose = () => {
         setOpen(false)
     }
@@ -31,9 +36,13 @@ const Article = ({ flags, name, cca2, cca3, altSpellings, idd }) => {
                         <li>
                             Country Calling Codes:{idd.root} {idd.suffixes}
                         </li>
+                        <li>Native Name Official: {name.nativeName?.eng?.official}</li>
+                        <li>Native Name Common: {name.nativeName?.eng?.common}</li>
                     </ul>
                 </div>
             </article>
+
+            {/* Dialog for additional information */}
             <Dialog
                 maxWidth='md'
                 open={open}
@@ -66,8 +75,10 @@ const Article = ({ flags, name, cca2, cca3, altSpellings, idd }) => {
                             Country Calling Codes:{idd.root}
                         </li>
                         <li>
-                         Suffixes Code: {idd.suffixes}
+                            Suffixes Code: {idd.suffixes}
                         </li>
+                        <li>Native Name Official: {name.nativeName?.eng?.official}</li>
+                        <li>Native Name Common: {name.nativeName?.eng?.common}</li>
                     </ul>
                 </DialogContent>
                 <DialogActions>

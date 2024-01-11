@@ -97,8 +97,13 @@ const CountryCatalog = () => {
           </FormControl>
         </div>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+          {/*  
+            This code dynamically creates and renders Article components for each country in the currentCountries array.
+            The key prop is set based on the common property of the country's name object,
+            and all other country properties are passed as individual props to the Article component.   
+           */}
           {currentCountries.map((country) => (
-            <Article key={country.name.common} {...country} />
+            <Article key={country.name.official}    {...country} />
           ))}
         </div>
         <div className='flex items-center justify-center mt-5'>

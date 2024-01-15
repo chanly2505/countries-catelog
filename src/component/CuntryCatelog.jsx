@@ -49,6 +49,8 @@ const CountryCatalog = () => {
 
   const handleClearSearch = () => {
     setSearchText('');
+    setPage(1); // Set page to its default value when clearing the search input
+    searchCountry(); // Trigger search when clearing the input
   };
 
   const handleSortChange = (event) => {

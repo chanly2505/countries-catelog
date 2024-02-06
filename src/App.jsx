@@ -1,6 +1,5 @@
 import './index.css';
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
-import CountryCatalog from './component/CuntryCatelog'
 import Error from './component/Error';
 import HomePage from './pages/HomePage';
 function App() {

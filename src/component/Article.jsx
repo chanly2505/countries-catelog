@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles'
+
+// Article component receives country information as props
 const Article = ({ flags, name, cca2, cca3, altSpellings, idd, nativeName }) => {
     // State to manage the open/closed state of the dialog
     const [open, setOpen] = useState(false)
+
     // Access the theme and check if the screen size is below 'md'
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'))
@@ -12,10 +15,13 @@ const Article = ({ flags, name, cca2, cca3, altSpellings, idd, nativeName }) => 
     const handleOpen = () => {
         setOpen(true)
     }
+
     // Function to handle closing the dialog
     const handleClose = () => {
         setOpen(false)
     }
+
+    // JSX to render country information
     return (
         <>
             <article className='overflow-hidden bg-white rounded-lg shadow-sm'>
@@ -34,7 +40,7 @@ const Article = ({ flags, name, cca2, cca3, altSpellings, idd, nativeName }) => 
                             Alternative Name: {altSpellings}
                         </li>
                         <li>
-                            Country Calling Codes:{idd.root} {idd.suffixes}
+                            Country Calling Codes: {idd.root} {idd.suffixes}
                         </li>
                         <li>Native Name Official: {name.nativeName?.eng?.official}</li>
                         <li>Native Name Common: {name.nativeName?.eng?.common}</li>
@@ -54,12 +60,11 @@ const Article = ({ flags, name, cca2, cca3, altSpellings, idd, nativeName }) => 
                             maxWidth: "500px",  // Set your width here
                         }
                     }
-                }
-                }
+                }}
             >
                 <DialogTitle>{name.official}</DialogTitle>
                 <DialogContent>
-                    {/** Render Additinal information here */}
+                    {/** Render Additional information here */}
                     <img src={flags.png} alt='' className='object-cover md:w-100 md:h-100 ' />
                     <ul className='flex flex-col items-start justify-start gap-2 pt-4 text-[14px]'>
                         <li>
@@ -72,7 +77,7 @@ const Article = ({ flags, name, cca2, cca3, altSpellings, idd, nativeName }) => 
                             Alternative Name: {altSpellings}
                         </li>
                         <li>
-                            Country Calling Codes:{idd.root}
+                            Country Calling Codes: {idd.root}
                         </li>
                         <li>
                             Suffixes Code: {idd.suffixes}
